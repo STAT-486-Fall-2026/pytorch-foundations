@@ -14,7 +14,7 @@ Learn PyTorch by reading, running, and changing small examples. The materials as
 
 3. Open a notebook in `notebooks/`, select the project's `.venv` Python kernel if prompted, and run its cells from top to bottom. The notebooks find the repository whether Jupyter starts in the repository root or the `notebooks` directory. Restart the kernel before rerunning a notebook from the beginning.
 
-The project uses Python 3.11 and CPU PyTorch by default. Installing packages requires internet access and can take several minutes. The notebooks and data run offline after setup. See [setup and troubleshooting](guides/setup.md) for VS Code, device choices, and common errors.
+The project uses Python 3.11 and CPU PyTorch by default. Installing packages requires internet access and can take several minutes. The notebooks and data run offline after setup. See [setup and troubleshooting](guides/01-setup.md) for VS Code, device choices, and common errors.
 
 ## Learning path
 
@@ -31,7 +31,7 @@ Each notebook is self-contained: it does not depend on variables or saved output
 | [07 Saving and inference](notebooks/07_saving_and_inference.ipynb) | Save and reload weights, preprocessing, architecture configuration, and predictions |
 | [08 Your own model](notebooks/08_your_own_model.ipynb) | An end-to-end baseline and a scaffold for trying architectures and your own data |
 
-The [concept guide](guides/concepts.md) connects the notebooks to familiar scikit-learn ideas. The [custom data guide](guides/custom-data.md) explains the expected CSV format and common changes for other tasks. The deliberately fictional [dataset](data/README.md) is included locally, with its generation script.
+The [concept guide](guides/02-concepts.md) connects the notebooks to familiar scikit-learn ideas. The [custom data guide](guides/03-custom-data.md) explains the expected CSV format and common changes for other tasks. The deliberately fictional [dataset](data/README.md) is included locally, with its generation script.
 
 ## A useful mental model
 
