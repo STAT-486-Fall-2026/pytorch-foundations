@@ -33,6 +33,12 @@ Each notebook is self-contained: it does not depend on variables or saved output
 
 The [concept guide](guides/02-concepts.md) connects the notebooks to familiar scikit-learn ideas. The [custom data guide](guides/03-custom-data.md) explains the expected CSV format and common changes for other tasks. The deliberately fictional [dataset](data/README.md) is included locally, with its generation script.
 
+## A complete training script
+
+After working through the notebooks, run `uv run python scripts/train_model.py` for a complete classification example. Edit the settings near the top of [the script](scripts/train_model.py) to try different features, model widths, dropout, batch sizes, or learning rates; modify `Classifier` to explore architectures. The script fits preprocessing on training rows, selects an epoch using validation loss, saves a checkpoint and learning history, and reloads the checkpoint for an example prediction. Each run replaces `artifacts/training_example.pt` and `artifacts/training_history.csv`.
+
+Once you have chosen your settings using validation, run `uv run python scripts/train_model.py --test` for a held-out test assessment. Avoid using test results to choose settings. For a new CSV, update the path, feature and label settings, and split column; the script expects numeric features, integer class indices, and preassigned `train`, `validation`, and `test` rows. See the [custom data guide](guides/03-custom-data.md) for adapting those assumptions and interpreting results.
+
 ## A useful mental model
 
 An sklearn pipeline often hides preprocessing and optimization behind `fit`. In PyTorch, you can see and control the steps: read data, fit preprocessing on training data, make batches, define a model and loss, compute gradients, update parameters, and evaluate on held-out data. More control also means more responsibility for avoiding leakage and selecting the correct model mode.
